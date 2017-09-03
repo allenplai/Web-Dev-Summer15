@@ -1,0 +1,20 @@
+body {
+	font-family: arial, Helvetica, sans-serif; 
+	background: #F5F5DC;
+	color: teal;
+	font-size: 90%;
+}
+
+h1 {
+	text-decoration: underline;
+}
+
+#myImage {
+	border-style: double;
+	border-width: 1em;
+	border-color: gray;
+}
+
+#controls {
+	margin-left: 1.5em;
+}

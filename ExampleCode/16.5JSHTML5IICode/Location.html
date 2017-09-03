@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Example</title>
+    </head>
+
+    <body>
+        <h1>Sample Page for Location</h1>
+        <input type="button" value="change location"
+               onclick="window.location.assign('http://www.cs.umd.edu/')" />
+        <h2>Location Properties</h2>
+        <script>
+            main();
+        
+            function main() {
+               for (property in window.location) {
+                  document.writeln(property + "&rarr;" + window.location[property] + "<br />");
+               }
+            }
+    	</script>
+    </body>
+</html>

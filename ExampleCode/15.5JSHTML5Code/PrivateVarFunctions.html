@@ -1,0 +1,44 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        function Student(name) {
+            /* private variables */
+            var maxAge = 108;
+            var age = -1;
+            
+            /* Private function. */
+            function validAge(ageVal) {
+                if (ageVal < maxAge) {
+                    return true;
+                }
+                return false;
+            }
+            
+            this.setAge = function(ageIn) {
+                if (validAge(ageIn)) {
+                    age = ageIn;
+                }
+            };
+            
+            this.getInfo = function() {
+                return name + " " + age;
+            };            
+        }
+        main();
+        
+        function main() {
+            var s1 = new Student("Mary");
+            document.writeln(s1.getInfo() + "<br />");
+            
+            s1.setAge(40);
+            document.writeln(s1.getInfo());
+        }
+        
+	</script>
+</body>
+</html>

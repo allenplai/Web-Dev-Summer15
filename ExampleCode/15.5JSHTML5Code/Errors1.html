@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+ 
+        main();
+        
+        function main() {
+            try {
+                alert("About to access method");
+                window.terps();
+            } catch(error) {
+                alert("Problem: " + error.message);
+            }
+        }
+        
+	</script>
+</body>
+</html>

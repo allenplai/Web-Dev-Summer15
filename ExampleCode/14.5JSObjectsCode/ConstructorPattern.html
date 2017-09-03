@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        main();
+
+        function main() {
+            var s1 = new Singer("Psy", "South Korea");
+            s1.info();
+            
+            var s2 = new Singer("Noolio", "AVW");
+            s2.info();
+            
+            /* Calling as function, not constructor */
+            Singer("MCNerdson", "CSCI");
+            info();  // window.info();
+        }
+        
+        function Singer(name, mainLocation) { // Convention to use capital S
+            this.name = name;
+            this.mainLocation = mainLocation;
+            this.info = function() {
+                document.writeln("Name: " + this.name);
+                document.writeln(", MainLocation: " + this.mainLocation + "<br />");
+            };
+        }
+        
+	</script>
+</body>
+</html>

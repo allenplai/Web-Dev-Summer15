@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+		<meta charset=UTF-8" /> 
+        <title>Geolocation</title>	
+    </head>	
+    <body>
+		<div id="mapContainer"></div>
+		
+        <script type="text/javascript"> 
+           if (!navigator.geolocation) {
+                alert("Geolocation not supported in current browser");
+           } else {
+                navigator.geolocation.getCurrentPosition(success, failure);
+           }           
+           function success(position) {
+               var latitudeLongitude = position.coords.latitude + "," + position.coords.longitude;
+			   var zoom_value = 17;
+			   
+			   var map = "http://maps.googleapis.com/maps/api/staticmap?center=";
+			   map += latitudeLongitude;
+			   map += "&zoom=" + zoom_value;
+			   map += "&size=500x500";
+               document.getElementById("mapContainer").innerHTML = "<img src='" + map + "'>";
+           }
+           function failure(error) {
+                var errors = { 
+                    1: "Permission denied",
+                    2: "Position unavailable",
+                    3: "Request timeout"
+                };
+                alert("Error ocurred: " + errors[error.code]);
+           }
+		   
+        </script>        
+    </body>
+</html>

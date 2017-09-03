@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <title>User-Defined Objects</title>	
+    </head>
+
+    <body>
+        <script type="text/javascript">
+        
+            main();
+        
+    	    function main() {
+                var course = new Object();
+                course.name = "cmsc198N";
+                course.credits = 3;
+                course.teacher = {};   // teacher is an object
+                course.teacher.email = "java@notreal.com";
+                course.teacher.office = "AVW5100";
+                
+                
+                /* Checking for the existence of a property */
+                var message;
+                if ("name" in course) {
+                    message = "The course has been assigned a name property.";
+                } else {
+                    message = "The course has not been assigned a name property.";
+                }
+                alert(message);
+                
+                
+                /* Checking for the existence of a property */
+                var message;
+                if (course.room === undefined) {
+                    message = "The course does not have a room property.";
+                } else {
+                    message = "The course have a room property.";
+                }
+                alert(message);
+                
+                
+                /* What appears when displaying the object variable? */
+                alert("Displaying object variable: " + course);
+                
+                
+                /* Displaying the properties of the object */
+                /* Why do we get undefined for the values of the properties? */
+                message = "";
+                for (propertyName in course) {
+                    message += propertyName + ":" + course.propertyName + "\n";
+                }
+                alert(message);
+            }	
+        </script>
+    </body>
+</html>

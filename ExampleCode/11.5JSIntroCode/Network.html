@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		<title>Network</title>	
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			
+            /* You need to allow browser pop-ups to run this program */
+			var network = prompt("Enter network name (abc, cbs, nbc)");
+			alert("Network specified is: " + network);
+			var webSite;
+			
+			if (network === "abc")
+				webSite = "http://www.abc.com";		
+			else if (network === "cbs")
+				webSite = "http://www.cbs.com";
+			else if (network === "nbc")
+				webSite = "http://www.nbc.com";
+			else
+				webSite = "http://www.cnn.com";
+		
+			window.open(webSite); 	
+
+		</script>
+	</body>
+</html>

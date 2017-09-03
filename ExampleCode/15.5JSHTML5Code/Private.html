@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        function Student(name) {
+            this.setName = function(nameIn) {
+                name = nameIn;
+            };
+            
+            this.getName = function() {
+                return name;
+            };            
+        }
+        main();
+        
+        function main() {
+            var s1 = new Student("Mary");
+            document.writeln(s1.getName() + "<br />");
+            
+            s1.setName("Laura");
+            document.writeln(s1.getName());
+        }
+        
+	</script>
+</body>
+</html>

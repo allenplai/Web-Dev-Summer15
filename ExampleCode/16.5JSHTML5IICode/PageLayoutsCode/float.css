@@ -1,0 +1,17 @@
+body {
+	font-family: Arial, Helvetica, serif; 
+}
+
+#glmBldImg {
+	float: left;
+	margin: .5em;
+}
+
+#p2 {
+	clear: left; /* comment this out to see the effect */
+}
+
+#UMDLogoImg {
+	float: left;
+}
+

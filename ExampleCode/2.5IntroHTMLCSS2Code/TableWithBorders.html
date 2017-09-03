@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>Tables</title>
+	</head>
+	<body>
+		<table border="1">
+            <caption><em>Table Border 1</em></caption>
+            <tr> <th></th>         <th>Exam1</th>  <th>Exam2</th></tr>
+            <tr> <td>Student1</td> <td>10</td>     <td>100</td>  </tr>
+            <tr> <td>Student2</td> <td>20</td>     <td>200</td>  </tr>
+		</table>
+        
+        <!-- Table with colspan -->
+		<table border="1">
+            <caption><em>Table with colspan</em></caption>
+            <tr> <th colspan="2">Exam1</th>     <th>Exam2</th> </tr>
+            <tr> <td>Student1</td> <td>10</td>  <td>100</td>   </tr>
+            <tr> <td>Student2</td> <td>20</td>  <td>200</td>   </tr>
+		</table>
+		
+		<!-- Table with rowspan -->
+		<table border="1">
+            <caption><em>Table with rowspan</em></caption>
+            <tr> <th></th>                      <th>Exam1</th>    <th>Exam2</th> </tr>
+            <tr> <td>Student1</td>              <td>10</td>       <td>100</td>   </tr>
+            <tr> <td rowspan="3">Student2</td>  <td>20</td>       <td>200</td>   </tr>
+            <tr> 	       		       <td>40(Retaken)</td>  	 <td>400(Retaken)</td>   </tr>
+            <tr> 	       		       	       <td>60(Retaken)</td>  	 <td>600(Retaken)</td>   </tr>
+		</table>	
+   </body>
+</html>

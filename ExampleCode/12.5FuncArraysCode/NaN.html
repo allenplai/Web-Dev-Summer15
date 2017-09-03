@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" />
+        <title>NaN</title>	
+    </head>
+
+    <body>
+        <script>
+	    
+            /* calling main */
+            main();
+        
+    	    function main() {
+                var examScore = 84.5;
+                var name = "Mary Smith";
+                
+                var message = "examScore is a number: " + !isNaN(examScore) + "\n";
+                message += "name is a number: " + !isNaN(name) + "\n";
+                message += "NaN == NaN: " + (NaN == NaN) + "\n";
+                message += "NaN === NaN: " + (NaN === NaN) + "\n";
+                message += "NaN == \"hello\": " + (NaN == "hello") + "\n";
+                message += "\"24Hi\" is a number: " + !isNaN("24Hi") + "\n";
+                message += "-24 is a number: " + !isNaN("-24") + "\n";
+                message += "+24 is a number: " + !isNaN("+24") + "\n";
+                message += "Numerical expression is a number: " + !isNaN(5 + 4) + "\n";
+                message += "String expression is a number: " + !isNaN("5" + "4") + "\n";
+                message += "String expression (2) is a number: " + !isNaN("5 + 4") + "\n";
+                alert(message);
+            }	
+    
+        </script>
+    </body>
+</html>

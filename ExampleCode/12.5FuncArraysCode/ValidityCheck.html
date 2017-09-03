@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" />
+        <title>Validity Check</title>	
+    </head>
+
+    <body>
+        <script>
+	    
+            /* calling main */
+            main();
+        
+            /* Notice the code fails when the user enters blank characters */
+    	    function main() {
+                var value, invalid;
+                do {
+                    value = prompt("Enter a number");
+                    invalid = (value !== null && (isNaN(value) || (value === "")));
+                    if (invalid) {
+                        alert("You need to enter a number");
+                    }
+                } while(invalid);
+                
+                if (value === null) {
+                     alert("No value was provided");
+                } else {
+                    alert("Value provided: " + value);
+                }
+            }	
+    
+	    </script>
+    </body>
+</html>

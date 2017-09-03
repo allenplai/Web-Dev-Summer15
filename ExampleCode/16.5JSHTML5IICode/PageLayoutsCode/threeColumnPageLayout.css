@@ -1,0 +1,43 @@
+body {font-family: Arial, Helvetica, serif;
+} 
+
+#header {
+	background-color: #C3D9FF;
+	font-weight: bold;
+	font-size: 2em;
+}
+
+#headerGlobe {
+	float: left;
+	padding-right: .25em;	
+}
+
+#navigation {
+	width: 15%;
+	float: left;
+}
+
+#navigation ul {
+ 	list-style-type: none; /* gets rid of bullet */
+}
+
+a:hover {
+	color: red;
+}
+
+#content {
+ 	width: 70%;
+ 	float: left;
+	background: #FFFFCC;
+}
+
+#news {
+	width: 15%;
+	float: left;
+}
+
+#footer {
+ 	clear: both;  /* comment this out and see what happens */
+ 	border-top: .025em solid gray;
+	background-color: #C3D9FF;
+}

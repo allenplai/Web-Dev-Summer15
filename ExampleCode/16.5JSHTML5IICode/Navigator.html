@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Example</title>
+    </head>
+
+    <body>
+    	<script>
+            main();
+        
+            function main() {
+               for (property in window.navigator) {
+                  document.writeln(property + "&rarr;" + window.navigator[property] + "<br />");
+               }
+               document.writeln("Java Enabled?: " + navigator.javaEnabled());
+            }
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+
+/* NOTE: While validating, make sure you use CSS */
+/* level 3 profile by accessing "More Options" */
+body {
+ 	font-family: Arial, Helvetica, sans-serif;
+} 
+
+ol {
+    list-style-type: none;
+}
+input {
+    display: block;
+    width: 15em;
+    padding: .25em; /* help us see the arrows in <input type=number ...*/
+    border-radius: .75em; /* makes our input elements with round borders */
+}
+
+input[type="submit"] {
+    margin-top: 1em;                
+    box-shadow: 1em 1em 1em silver; 
+}
+
+h1 {
+    text-shadow: silver .125em .125em .125em;
+}
+
+header {
+    border-bottom-style: double;
+    border-bottom-width: .25em;
+    margin-bottom: 1em;
+}
+
+footer {
+    margin-top: 3em;
+    border-top-style: double;
+    border-top-width: .25em;
+    border-bottom-style: double;
+    border-bottom-width: .25em;
+}
+
+table {
+    border-style: solid;
+    text-align: center;
+} 
+
+/* Specifying table rows colors */
+tr:nth-of-type(even) {
+    background-color: silver;
+} 
+
+tr:nth-of-type(odd) {
+    background-color: red;
+}
+
+tr:last-child {
+    color: yellow;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: gray;
+}

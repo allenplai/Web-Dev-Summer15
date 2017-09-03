@@ -1,0 +1,64 @@
+body {
+    background: #CCFFCC;
+
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+nav {
+    border: 2px solid;
+    border-radius: 25px;
+    text-align: center;
+    padding: 8px;
+}
+
+/* class selector */
+.title {
+    font-weight: 800; 
+    font-size: larger;
+}
+
+/* id selector */
+#shadow {
+    color: #FF9900;
+    background: yellow;
+    box-shadow: 30px 30px 30px black;
+    font-family: fantasy;
+    border-radius: 25px;
+    text-align: center;
+}
+
+ul.lowlat {
+    list-style-type: lower-latin;
+}
+
+ul.squares {
+    list-style: square;
+}
+
+#disappear:hover {
+    color: #CCFFCC;
+}
+
+/***** Hypertext Links *****/
+a:link {
+	color: grey;
+	text-decoration: underline;
+	text-align: center;
+}
+
+a:visited {
+	color: teal;
+}
+
+a:hover {
+	color: green;
+	font-style: italic;
+}
+
+a:active {
+	color: yellow;
+	font-style: italic;
+}

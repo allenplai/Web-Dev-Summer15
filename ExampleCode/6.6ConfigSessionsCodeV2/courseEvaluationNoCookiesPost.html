@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      <title>Course Ev</title>	
+   </head>
+
+   <body>
+      <form action="verifyNoCookiesPost.php" method="post">
+          <p><b>Professor: </b><input type="text" name="name" /><br /><br />
+          	 <b>Course: </b><input type="text" name="course" /><br /><br />
+           </p>
+                   
+          <p>
+          	<b>How would you rate the course's difficulty?</b><br />
+            <select name="difficulty">
+            	<option value="Easy">Easy</option>
+            	<option value="Fair">Fair</option>
+            	<option value="No comments-opinions">No comments-opinions</option>
+			</select>	
+          </p>
+    
+		  <p>
+		  	<b>Opinion about the course</b><br />
+			<textarea rows="5" cols="80" name="opinion"></textarea>	
+          </p>
+          
+          <p>
+          	<input type="reset" />
+          	<input type="submit" value="Continue" />
+          </p>
+      </form>
+   </body>
+</html>

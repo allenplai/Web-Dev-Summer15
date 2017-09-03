@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>jQuery</title>
+        <!-- Including jQuery library using CDN -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --?
+		
+		<!-- Including jQuery library using local file -->
+		<script src="jquery-1.11.3.min.js"></script>
+		
+        <style>
+            .reallyLarge { font-size: 4em; }
+            .style1 { color: red }
+        </style>
+    </head>	
+    <body>
+        <h1>jQuery Template</h1>
+        <p>
+			Click on image to make it disappear.
+		</p>
+		<br>
+		<img src="testudo.jpg" alt="testudo_image" id="testudo_image"><br>
+		<input type="button" id="display_image_button" value="display image">
+        <input type="button" id="toggle_image_button" value="toggle display">
+        
+		<script>
+            $(document).ready(mainProcessing);
+              
+            function mainProcessing() {
+				$("#testudo_image").click(function() { $(this).hide() });  /* Notice use of $(this) */
+				$("#display_image_button").click(function() { $("#testudo_image").show(); });
+				$("#toggle_image_button").click(function() { $("#testudo_image").toggle(); });
+            }
+			
+        </script>        
+    </body>
+</html>

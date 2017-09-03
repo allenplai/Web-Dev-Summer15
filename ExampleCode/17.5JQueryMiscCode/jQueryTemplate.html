@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>jQuery</title>
+        <!-- Including jQuery library using CDN -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --?
+		
+		<!-- Including jQuery library using local file -->
+		<script src="jquery-1.11.3.min.js"></script>
+		
+        <style>
+            .reallyLarge { font-size: 4em; }
+            .style1 { color: red }
+        </style>
+    </head>	
+    <body>
+        <h1>jQuery Template</h1>
+        <p>
+        Press any key to recognize key pressed event.
+		</p>
+		
+        <script>
+            $(document).ready(mainProcessing);
+              
+            function mainProcessing() {
+                $("body").keypress(function() { alert("Key pressed"); });
+            }
+        </script>        
+    </body>
+</html>

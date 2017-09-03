@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>jQuery</title>
+        <!-- Including jQuery library using CDN -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --?
+		
+		<!-- Including jQuery library using local file -->
+		<script src="jquery-1.11.3.min.js"></script>
+		
+        <style>
+            .reallyLarge { font-size: 4em; }
+            .style1 { color: red }
+        </style>
+    </head>	
+    <body>
+        <h1>jQuery Template</h1>
+        <p>
+			Click on image to make it disappear.
+		</p>
+		<br>
+		<img src="testudo.jpg" alt="testudo_image" id="testudo_image"><br>
+		<input type="button" id="display_image_button" value="display image (slow)">
+        <input type="button" id="toggle_image_button" value="toggle display (3000 milliseconds)">
+        
+		<script>
+            $(document).ready(mainProcessing);
+              
+            function mainProcessing() {
+				$("#testudo_image").click(function() { $(this).hide() });  /* Notice use of $(this) */
+				$("#display_image_button").click(function()
+						{ $("#testudo_image").show("slow", after_display_callback); });
+				$("#toggle_image_button").click(function() { $("#testudo_image").toggle(3000); });
+            }
+			
+			function after_display_callback(args) {
+				alert("This message is displayed after image has slowly reappear");
+			}
+        </script>        
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Example</title>
+    </head>
+
+    <body>
+    	<script>
+            main();
+        
+            function main() {
+                var previousPageOption = false; /* Change option */
+                /* Before running the script, check several sites in the page */
+                /* you will run it */
+               document.writeln("URLs in history list: " + window.history.length);
+               if (previousPageOption) {
+                  alert("Going to previous page");
+                  window.history.back();
+               } else {
+                  var page = Number(prompt("Which URL from the history list you would like to load", "-1"));
+                  window.history.go(page);
+               }
+            }
+    	</script>
+    </body>
+</html>

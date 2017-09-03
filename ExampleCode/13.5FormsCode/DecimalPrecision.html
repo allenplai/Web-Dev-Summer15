@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" /> 
+		<title>Decimal Precision</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var value = 123.12345678, precision, result, maxPrecision = 8;
+
+            document.writeln("<h2>toFixed</h2>");
+            precision = 0;
+            while (precision <= maxPrecision) {
+                result = value.toFixed(precision);
+                document.writeln(value + " using toFixed precision of ");
+                document.writeln(precision + " is " + result + "<br />");
+
+                precision++;
+            }
+
+            document.writeln("<h2>toPrecision</h2>");
+            precision = 1; /* Starting at 1 not 0 */
+            while (precision <= maxPrecision) {
+                result = value.toPrecision(precision);
+                document.writeln(value + " using toPrecision for precision of ");
+                document.writeln(precision + " is " + result + "<br />");
+
+                precision++;
+            }
+
+        </script>
+    </body>
+</html>

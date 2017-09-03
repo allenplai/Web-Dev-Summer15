@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script onload="main()">
+        main();
+                
+        function main() {
+            var course = new Object();
+            course.name = "cmsc999";
+            course.mainTask = task;
+        
+            document.writeln(course);
+            document.writeln("<br />" + course.name);
+            course.mainTask();
+        
+            delete course.name;
+            document.writeln("After delete course.name is " + course.name);
+            
+            var rest = {
+                name: "El Taco Loco",
+                years: 10,
+                businessAd: ad,
+                7: "seven",
+                "8": "eight"
+            }
+            
+            document.writeln("<br />" + rest.name + " " + rest.years + " "+ rest[7] + "<br />");
+            document.writeln(rest[8] + "<br />");
+            rest.businessAd();
+            
+        }
+        
+        function task() {
+            document.writeln("<h1>Completing task</h2>");
+        }
+        
+        function ad() {
+            document.writeln("<strong>Business Ad: Visit \"El Taco Loco\"</strong>");
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+            
+        function Student(name, credits, courses) {
+            this.name = name;
+            this.credits = credits;
+            this.courses = courses;
+        }
+        
+        Student.prototype = {
+            constructor: Student,   
+            college: "UMCP",
+            info: function() {
+                document.writeln("Name: " + this.name);
+                document.writeln(", Credits: " + this.credits);
+                document.writeln(", Courses: " + this.courses + " ");
+                document.writeln(", College: " + this.college + "<br />");
+            }
+        };
+        
+        main();
+        
+        function main() {
+            var s1 = new Student("Kelly", 15, [414, 420]);
+            s1.info();
+            s1.courses[2] = [830];
+            
+            var s2 = new Student("Peter", 12, [314, 320]);
+            s2.info();
+        }
+        
+	</script>
+</body>
+</html>

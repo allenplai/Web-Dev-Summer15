@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+    <div data-role="page" data-theme="a">
+        <div data-icon="home" data-role="header" position="fixed">
+        <a href="#" data-role="button" data-icon="home"></a>
+    	<h1>Home page for CMSC389N project 1</h1>
+        </div>
+ 
+ 
+        <div data-role="content">
+            <p>The content will be of a personal web page.
+                <br> I think this is a great project.
+                <br> I will modify it and actually use it as a personal web page.
+            </p>
+        </div><!-- /content -->
+        
+        
+        <!-- Collapsible area -->
+        <div data-role="collapsible-set">
+        
+            <!-- Position Info -->
+            <div data-role="collapsible" data-collapsed="true">
+                <h3>Favorite websites</h3>   
+                        <a href="http://www.google.com" data-transition="slide">Google</a>  <br>
+                        <a href="http://www.producthunt.com" data-transition="slide">Product Hunt</a>   <br>
+                        <a href="http://www.youtube.com" data-transition="slide">Youtube</a>    <br>
+                        <a href="http://www.umd.edu" data-transition="slide"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSWgjOJzkiaOEBJIGmZi3XqHvmV3AJHG-angV3peErC7Bne-PF_XzMPLds" alt="Testudos Image" /></a> <br>           
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Interests in ordered list</h3>
+                <ol>
+                    <li>Computer Science</li>
+                    <li>Economics</li>
+                    <li>Physics</li>
+                </ol>
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Social Media handles in unordered list</h3>
+                <ul>
+                    <li>Twitter:@allenplai</li>
+                    <li>Snapchat:allen.lai</li>
+                    <li>Facebook:allen.lai.99</li>
+                </ul>
+            </div>
+            
+            
+            <div data-role="collapsible">
+                <h3>Favorite books in nested lists</h3>
+                <ol>
+                    <li>Non-Fiction</li>
+                    <ul class="lowlat">
+                        <li>Mere Christianity - C.S. Lewis</li>
+                        <li>The Reason for God - Timothy J. Kellor</li>
+                        <li>Culture Making - Andy Crouch</li>
+                    </ul>
+                    <li>Fiction</li>
+                    <ul>
+                        <li>Pilgrim's Progress - John Bunyan</li>
+                        <li>The Chronicles of Narnia - C.S. Lewis</li>
+                    </ul>
+                </ol>
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Places I lived at - in a table</h3>
+                <table border="1">
+                    <caption>colspan and rowspan was used</caption>
+                    <tr> <th>City</th>    <th>State</th>     <th>Country</th>                   <th># of years</th> </tr>
+                    <tr> <td>Madison</td> <td>WI</td> <td rowspan="2">United States</td> <td>7</td>  </tr>
+                    <tr> <td>Chicago</td> <td>IL</td>                                    <td>4</td>  </tr>
+                    <tr> <td colspan="2">Kaohsiung</td>              <td>Taiwan</td>     <td>6</td>  </tr>
+                    <tr> <td>Rockville & College Park</td> <td>MD</td> <td>United States</td> <td>5</td>  </tr>
+                </table>
+            </div>
+            
+        </div> <!-- End of Collapsible area-->
+        
+        <p id="disappear">If you hover over this text then it will NOT blend in with the background. :(</p>
+
+        <a href="http://allenlai.drupalgardens.com" target="_blank">Here is a link to my Drupal Gardens Web page</a>
+        <br>
+        <a href="http://www.terpconnect.umd.edu/~alai18/389n/">Click here to go back to Desktop version but no style.</a>
+
+ 
+        <div data-role="footer">
+            &copy;Allen's website 
+        </div><!-- /footer -->
+ 
+    </div><!-- /page -->
+</body>
+</html>

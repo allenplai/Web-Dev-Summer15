@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>jQuery</title>
+        <!-- Including jQuery library using CDN -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --?
+		
+		<!-- Including jQuery library using local file -->
+		<script src="jquery-1.11.3.min.js"></script>
+    </head>	
+    <body>
+        <h1>jQuery Template</h1>
+        <p>
+			Click on the text to slide it up.
+		</p>
+		<br>
+		<img src="testudo2.jpg" alt="testudo_image" id="testudo_image"><br>
+		<input type="button" id="display_image_button" value="display image (slow)">
+        
+		<script>
+            $(document).ready(mainProcessing);
+              
+            function mainProcessing() {
+				$("p").click(function() { $(this).slideUp(); });
+            }
+			
+        </script>        
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <title>Adding Properties</title>	
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            /* calling main */
+            main();
+        
+    	    function main() {
+                var sale = new Object();
+                
+                /* Reading the items, number of items */
+                var wantAnotherItem, item, numberOfItems;
+				
+                do {
+                    item = prompt("Enter name of item you want to buy.");
+                    numberOfItems = prompt("Enter number of items you want to buy.");
+                    sale[item] = numberOfItems;
+                    wantAnotherItem = window.confirm("Do you want to buy another item?");   
+                } while (wantAnotherItem);
+                
+                /* Report about bought items */
+                var report = "Items bought\n";
+                for (propertyName in sale) {
+                    report += propertyName + "-->" + sale[propertyName] + "\n";
+                }
+                alert(report);
+            }	
+        </script>
+    </body>
+</html>

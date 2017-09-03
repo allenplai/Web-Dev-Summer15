@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>JavaScript Program Template</title>
+      <style>body {background-color: #FFF1CC}</style>
+    </head>
+
+    <body>
+        <h1>Viewer</h1>
+        <img id="theImage" src="initialImage.jpg" alt="viewerImg" height="295" width="444"/><br />
+        <hr>
+        <form>
+            Photos' Folder: <input id="folderName" type="text" name="photoFolder" value="umcp/" size="44"/> <br> <br>
+            Common Name: <input id="commonName" type="text" name="CommonName" value="college"/> <br> <br>
+            Start Photo Number: <input id="startNumber" type="text" name="startNumber" value="1" size="7" maxlength="2"/>
+            End Photo Number: <input id="endNumber" type="text" name="endNumber" value="1" size="7" maxlength="2"/> <br> <br>
+            <input type="button" id="slideShow" value="Slide Show" />
+            <input type="button" id="randomSlideShow" value="Random Slide Show" />
+            <input type="button" id="previousSlide" value="Previous Slide" />
+            <input type="button" id="nextSlide" value="Next Slide" />    <br>
+            <input type="reset" /> <br><br>
+            <p>Additional Functionality</p>
+            <input type="button" id="autoSlideShow" value="Auto Slide Show" />
+            <input type="button" id="autoRandomSlideShow" value="Auto Random Slide Show" />
+            <input type="button" id="autoStopShow" value="Auto Stop Show" />
+
+        </form>
+        <script type="text/javascript">
+        "use strict";
+        // global variables
+        var intervalID;
+        var arrayObject = new ArrayClass();
+
+        main();
+
+        function main() {
+          document.getElementById("slideShow").onclick = slideShow;
+          document.getElementById("randomSlideShow").onclick = randomSlideShow;
+          document.getElementById("previousSlide").onclick = previousSlide;
+          document.getElementById("nextSlide").onclick = nextSlide;
+          document.getElementById("theImage").onclick = nextSlide;
+
+          document.getElementById("autoSlideShow").onclick = autoSlideShow;
+          document.getElementById("autoRandomSlideShow").onclick = autoRandomSlideShow;
+          document.getElementById("autoStopShow").onclick = autoStopShow;
+        }
+
+        function slideShow() {
+          arrayObject.arrayPhotosNames = arrayObject.getArrayPhotosNames();
+          //arrayPhotosNames = getArrayPhotosNames();
+          //document.getElementById("theImage").setAttribute("src", arrayPhotosNames[0]);
+        }
+
+        function randomSlideShow() {
+
+          arrayObject.arrayPhotosNames = arrayObject.getArrayPhotosNames();
+          arrayObject.arrayPhotosNames = arrayObject.randomize(arrayObject.arrayPhotosNames);
+        }
+
+        function nextSlide() {
+          var imageElement = document.getElementById("theImage");
+          var currentPhoto = imageElement.getAttribute("src");
+          var indexCurrent = arrayObject.arrayPhotosNames.indexOf(currentPhoto);
+          var indexLast = arrayObject.arrayPhotosNames.length - 1;
+          if (indexCurrent == indexLast) {
+            imageElement.setAttribute("src", arrayObject.arrayPhotosNames[0]);
+          } else {
+            imageElement.setAttribute("src", arrayObject.arrayPhotosNames[indexCurrent+1]);
+          }
+        }
+
+        function previousSlide() {
+          var imageElement = document.getElementById("theImage");
+          var currentPhoto = imageElement.getAttribute("src");
+          var indexCurrent = arrayObject.arrayPhotosNames.indexOf(currentPhoto);
+
+          if (indexCurrent == 0) {
+            imageElement.setAttribute("src", arrayObject.arrayPhotosNames[arrayObject.arrayPhotosNames.length - 1]);
+          } else {
+            imageElement.setAttribute("src", arrayObject.arrayPhotosNames[indexCurrent-1]);
+          }
+        }
+
+        // my class with the required functions
+        function ArrayClass() {
+          this.arrayPhotosNames = [];
+
+          this.getArrayPhotosNames = function getArrayPhotosNames() {
+            var folderName = document.getElementById("folderName").value;
+            var commonName = document.getElementById("commonName").value;
+            var startNumber = Number(document.getElementById("startNumber").value);
+            var endNumber = Number(document.getElementById("endNumber").value);
+            if (startNumber > endNumber) {
+              alert("Invalid Number");
+            } else {
+              var arrayPhotosNames = new Array(endNumber - startNumber + 1);
+              for (var idx = 0; idx < arrayPhotosNames.length; idx++) {
+                  arrayPhotosNames[idx] = folderName + commonName + startNumber + ".jpg";
+                  startNumber++;
+              }
+              return arrayPhotosNames;
+            }
+          };
+
+          this.randomize = function randomize(dataArray) {
+            var max = dataArray.length;
+            for (var idx = 0; idx < dataArray.length; idx++) {
+              var randomNumber = Math.floor((max+1) * Math.random());
+              var tmp = dataArray[idx];
+              dataArray[idx] = dataArray[randomNumber];
+              dataArray[randomNumber] = tmp;
+            }
+            return dataArray;
+          };
+        }
+
+        // function for extra functionality
+        function autoSlideShow() {
+          clearInterval(intervalID);
+          var intervalInMilliseconds = 1000;
+          slideShow();
+          intervalID = setInterval("nextSlide()", intervalInMilliseconds);
+        }
+
+        function autoRandomSlideShow() {
+          clearInterval(intervalID);
+          var intervalInMilliseconds = 1000;
+          randomSlideShow();
+          intervalID = setInterval("nextSlide()", intervalInMilliseconds);
+        }
+
+        function autoStopShow() {
+          clearInterval(intervalID);
+        }
+
+        </script>
+
+    </body>
+</html>

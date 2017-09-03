@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>PhotoViewer</title>
+    	<script src="js/PhotoViewer.js"></script>
+        <link rel="stylesheet" href="css/mainStyleSheet.css" />
+    </head>
+
+    <body>
+        <h1>Viewer</h1>
+        <noscript>
+        <p>
+            JavaScript is either disabled or not supported. JavaScript access
+            is required for accessing the viewer.  If you don't have JavaScript support
+            please visit the following alternate site: http://www.anotherSiteYouHaveToUse.org.
+        </p>
+        </noscript>
+        
+        <div id="imageBox">
+            <img id="myImage" src="images/Testudo1.jpg" width="444" height="293" alt="viewerImg" />
+        </div>
+        <form>
+            <div id="controls">
+                Photo's Location: 
+                <input type="text" id="photoName" value="images/Testudo1.jpg" />     
+                <input type="button" id="displayPhotoButton" value="Display Photo" />    
+                <input type="reset" name="Reset" />
+            </div>    
+        </form>
+    </body>
+</html>

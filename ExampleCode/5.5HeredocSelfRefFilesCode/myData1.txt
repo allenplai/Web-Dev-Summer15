@@ -1,0 +1,6 @@
+IOS
+Android
+Linux
+MacOS
+Solaris
+Windows 7

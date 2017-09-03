@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		<title>HTML5 Form Elements</title>
+        <!-- Notice: no more need for type -->
+        <link rel="stylesheet" href="stylesheet.css" />
+    </head>	
+    <body onload="main()">
+        <h1>HTML5 Form Elements</h1>
+        <form id="mainForm">
+            <!-- Notice the use of a list to provide the fields. css rule will
+                 remove typical list formatting
+            -->
+            <ol>
+                <li>
+                    <label for="name">Name</label>
+                    <!-- When page is loaded autofocus makes cursor point to name field -->
+                    <!-- required will not allow us to move without providing a value -->
+                    <input id="name" type="text" autofocus required="required">
+                </li>
+                <li>
+                    <label for="emailAddress">E-mail Address</label>
+                    <!-- notice placeholder is not the same as value -->
+                    <!-- try inputting an e-mail address with invalid characters (e.g., bla&here) -->
+                    <!-- try looking at them using iphone/ipod -->
+                    <input id="emailAddress" type="email" placeholder="example@notreal.notreal">
+                </li>
+                <li>
+                    <!-- try looking at them using iphone/ipod -->
+                    <label for="webPage">Class Web Page</label>
+                    <input id="webPage" type="url" placeholder="http://www.notreal.notreal">
+                </li>
+                <li>
+                    <label for="userPassword">User Password</label>
+                    <input id="userPassword" type="password" autocomplete="off">
+                </li>
+                <li>
+                    <label for="userMidtermScore">User Midterm Score (0 to 50)</label>
+                    <input id="userMidtermScore" type="range" min="0" max="50" step="5" value="0">    
+                </li>
+                <li>
+                    <label for="userFinalScore">User Final Score (0 to 100)</label>
+                    <input id="userFinalScore" type="number" min="0" max="100" step="10" value="0">    
+                </li>
+                <li>
+                    <label for="enteredTime">Time Data Entered</label>
+                    <input id="enteredTime" type="time">    
+                </li>
+                <li>
+                    <label for="enteredDateTime">Date Time Data Entered</label>
+                    <input id="enteredDateTime" type="datetime-local">    
+				</li>
+                <li>
+                    <input type="submit" id="processDataButton" value="Register" />
+                </li>
+            </ol>
+        </form>
+        <script> 
+            function main() {
+                var allValues = "";
+				
+                /* Using anonymous function as listener */
+				
+                document.getElementById("mainForm").onsubmit = function() {
+                    /* Remember: in this context += is the same as append */
+                    allValues += "Name: " + document.getElementById("name").value + "\n";
+                    allValues += "Email Address: " + document.getElementById("emailAddress").value + "\n";
+                    allValues += "Class Web Page: " + document.getElementById("webPage").value + "\n";
+                    allValues += "User Password: " + document.getElementById("userPassword").value + "\n";
+                    allValues += "User Midterm: " + document.getElementById("userMidtermScore").value + "\n";
+                    allValues += "User Final Score: " + document.getElementById("userFinalScore").value + "\n";
+                    allValues += "Entered Time: " + document.getElementById("enteredTime").value + "\n";
+                    allValues += "Entered Date Time: " + document.getElementById("enteredDateTime").value + "\n";
+                    alert("Provided values are: \n" + allValues);
+                };
+            }
+        </script>        
+    </body>
+</html>

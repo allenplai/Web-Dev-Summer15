@@ -1,0 +1,10 @@
+body {font-family: Arial, Helvetica, serif;
+
+} 
+
+#content {
+	background: #FFFFCC;
+	margin-left: 7em;
+	color: teal;
+	font-style: italic;
+}

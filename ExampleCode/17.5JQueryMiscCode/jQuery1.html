@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>jQuery</title>
+        <!-- Including jQuery library using CDN -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --?
+		
+		<!-- Including jQuery library using local file -->
+		<script src="jquery-1.11.3.min.js"></script>
+		
+        <style>
+            .reallyLarge { font-size: 4em; }
+            .style1 { color: red }
+        </style>
+    </head>	
+    <body>
+        <h1>jQuery Example</h1>
+        <p>
+            The main site of the Dept of Computer Science is
+            <a href="http://www.cs.umd.edu/">CS Dept (click on this link)</a>.
+        </p>
+        
+        <p id="secondParagraph">
+            Additional information about the University is available on request.
+            (click on paragraph to increase size, double-click to decrease size).
+        </p>
+        
+        Press any key to recognize key pressed event.  Hover over
+        word <span class="style1">HERE</span> to see mouse over event
+        
+        <script>
+            /* Notice we could have used anonymous functions */
+            $(document).ready(mainProcessing);
+              
+            function mainProcessing() {
+                $("a").click(linkProcessing);
+                $("p#secondParagraph").click(increaseSize);
+                $("p#secondParagraph").dblclick(decreaseSize);
+                $("body").keypress(processKey);
+                $("span.style1").mouseover(processMouseOver);
+            }
+              
+            function linkProcessing(event) {
+                alert("After clicking the link will fade");
+                event.preventDefault();
+                $(this).fadeTo("slow", 0.25); // fading
+            }
+              
+            function increaseSize(event) {
+                $(this).addClass("reallyLarge");
+            }
+            
+            function decreaseSize(event) {
+                $(this).removeClass("reallyLarge");
+            }
+            
+            function processKey(event) {
+                alert("key pressed");
+            }
+            
+            function processMouseOver(event) {
+                alert("Mouse has entered");
+            }
+        </script>        
+    </body>
+</html>

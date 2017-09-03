@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>charAt Example</title>
+    </head>
+    <body>
+    	<script>
+            main();
+            
+            function main() {
+                var a = "Hello";
+                alert("Number of instances found is " + findInstancesOfChar(a, "l"));
+                var value = prompt("Enter four digit value");
+                var message;
+                if (validDigits(value, 4)) {
+                    message = "Correct value provided";
+                } else {
+                    message = "Incorrect value provided";
+                }
+                alert(message);
+            }
+        
+            function findInstancesOfChar(str, target) {
+                count = 0;
+                /* What value for str does not allow the loop execution? */
+                for (var idx = 0; idx < str.length; idx++) {
+                    if (str.charAt(idx) === target) {
+                        count++;
+                    }
+                }
+                return count;
+            }
+	
+            function validDigits(data, length) {
+                if (data.length != length)
+                    return false;
+                else {
+                    for (var idx = 0; idx < data.length; idx++) {
+                        if (isNaN(data.charAt(idx)))
+                            return false;
+                    }
+                    return true;
+                }
+            }
+    	</script>    
+    </body>
+</html>

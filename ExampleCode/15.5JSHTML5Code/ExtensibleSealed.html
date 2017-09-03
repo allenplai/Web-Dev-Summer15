@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        
+        main();
+        
+        function main() {
+            var student = new Object();
+            student.name = "Rose";
+            Object.preventExtensions(student);
+            
+            student.gpa = 3.2;
+            /* It will be undefined */
+            document.writeln("<br />GPA: " + student.gpa);
+            
+            /* We can delete properties */
+            delete student.name;
+            document.writeln("<br />Name: " + student.name);
+            
+            /* Sealing the object */
+            var game = new Object();
+            game.name = "SuperTetris";
+            Object.seal(game);
+            
+            /* Ignored */
+            game.year = 2000;
+            delete game.name;
+            
+            document.writeln("<br />Game name: " + game.name);
+            document.writeln("<br />Game year: " + game.year);
+            document.writeln("<br />Extensible: " + Object.isExtensible(game));
+            document.writeln("<br />Sealed: " + Object.isSealed(game));
+            
+            /* Can still change the value */
+            game.name = "AnotherTetris";
+            document.writeln("<br />After changing name: " + game.name);
+        }
+	</script>
+</body>
+</html>

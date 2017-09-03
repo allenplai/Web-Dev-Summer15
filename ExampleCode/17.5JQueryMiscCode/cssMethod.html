@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8" /> 
+		<title>jQuery</title>
+        <!-- Including jQuery library using CDN -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --?
+		
+		<!-- Including jQuery library using local file -->
+		<script src="jquery-1.11.3.min.js"></script>
+		
+		<style>
+            .reallyLarge { font-size: 4em; color: yellow; }
+            .style1 { color: blue; }
+        </style>
+    </head>	
+    <body>
+        <h1>css method</h1>
+        <p>
+        University of MD.
+		</p>
+		
+        <script>
+            $(function() {
+				alert("Adding class");
+				$("p").addClass("reallyLarge");
+
+				alert("Current font: " + $("p").css("font-size"));
+				
+				alert("About to change font and color");
+				$("p").css({"font-size": "1em", "color":"red"});
+            });
+        </script>        
+    </body>
+</html>

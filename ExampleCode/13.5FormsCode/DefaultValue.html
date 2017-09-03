@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" /> 
+		<title>Default values</title>
+    </head>
+    <body onload="main()">
+
+        <h1>Try by just pressing OK</h1>
+        <script>
+           function main() {
+              var valueEntered = prompt("Enter value"), defaultSize = 10;
+
+              if (valueEntered === "") {
+                 alert("Using default: " + defaultSize);
+              } else if (valueEntered === null) {
+                 alert("Cancel selected");
+              }
+              valueEntered = valueEntered || defaultSize;  /* Used often (idiomatic expression) */
+              document.writeln("<span style=\"font-size: " + valueEntered + "em\">&#x263a;</span>");
+           }
+        </script>
+    </body>
+</html>

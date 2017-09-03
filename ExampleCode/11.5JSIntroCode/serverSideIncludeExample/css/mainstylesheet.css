@@ -1,0 +1,118 @@
+/***** HTML Selectors *****/
+/* Colors: #D3D3AB;, #E5E5CD; #59594A */
+body {
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-size: .75em; 
+	color: black;
+	width: 57em;
+	margin: 5em;
+	margin-top: 2em;
+	border-width: .35em;
+	border-style: none;
+	border-color: black;
+	padding: 1em;
+} 
+
+
+/***** Layout Logic *****/
+
+#headerOne #globe1 {
+	width: 6em;
+	height: 6em;
+	margin-left: 1em;
+	border-style: none;
+}
+
+#headerOne #globe1:hover {
+	width: 6em;
+	height: 6em;
+	margin-left: 1em;
+	border-width: .012em;
+	border-right-style: solid;
+	border-left-style: solid;
+}
+
+#headerOne #deptcs {
+	width: 437px; /* 487px, 52 px */
+	height: 47px;
+	margin-left: 3em;
+	border-style: none;
+	vertical-align: 1em;
+	padding: 0em;
+	margin-bottom: 0em;
+}
+
+#headerOne #deptcs:hover {
+	border-width: .012em;
+	border-right-style: solid;
+	border-left-style: solid;
+}
+
+#headerOne #passportHeader {
+	width: 251px;
+	height: 46px;
+	margin-left: 18em;
+	padding: 0;
+	margin-top: -1em;
+}
+
+#content {
+	margin-top: -1.5em;
+	overflow: visible;
+	border-color: #b4b4b4;
+	border-style: solid;
+	border-width: .75em;
+	border-left-width: .75em;
+	border-right-width: .75em;
+	border-bottom-width: .75em;
+	/*height: 38em;*/
+	padding-top: 1em;
+	background-image: url(../images/background.jpg);
+}
+
+#content p {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+#content li {
+	padding-bottom: .5em;
+	padding-right: .5em;
+}
+
+#footer {
+	margin-top: 1em;
+	clear: both;
+	font-size: 1.25em;
+	border-style: double;
+	border-color: silver;
+	border-width: .25em;
+	height: 4.5em;
+	padding-top: .35em;
+	background-image: url(../images/background.jpg);
+}
+
+
+#footer ul {
+	list-style: none;
+	margin-left: 2em;
+}
+
+#footer p {
+	font-size: .85em;
+	font-style: italic;
+	text-align: center;
+}
+#footer li {
+	display: inline;
+	border-right-style: solid;
+	border-right-width: .05em;
+	border-right-color: gray;
+	padding-right: .3em;
+	padding-left: .25em;
+}
+
+#footerLastLi li {
+	display: inline;
+	border: none;
+}

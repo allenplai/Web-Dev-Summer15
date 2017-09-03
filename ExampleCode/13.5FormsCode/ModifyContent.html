@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Modify Content</title>
+    </head>
+	<body onload="main()">
+	    <p id="gettysburg">
+            Four score and seven years ago our fathers brought forth on this continent, 
+            a new nation, conceived in <strong>Liberty</strong>, 
+            and dedicated to the proposition that all men are created equal. 
+	    </p>
+
+	    <form>
+            <input id="modifyButton" type="button" value="Modify" />
+	    </form>
+	
+	    <script>
+         
+            function main() {
+               var button = document.getElementById("modifyButton");
+               button.onclick = changeContent;
+            }
+
+            function changeContent() {
+               var paragraph = document.getElementById("gettysburg");
+    
+               paragraph.innerHTML += "<br /><br /><em>Abraham Lincoln</em>";
+            }
+          
+	     </script>	     
+      </body>
+</html>

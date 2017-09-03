@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS Example</title>
+</head>
+
+<body>
+	<script>
+        
+        main();
+        
+        function main() {
+            var school = new Object();
+            var info;
+            
+            school.name = "UMCP";
+            school.city = "College Park";
+            Object.freeze(school);
+            
+            school.mascot = "terp";
+            school.name = "UMD";
+            delete school.city;
+            
+            info = school.name + " " + school.city + " " + school.mascot;
+            document.writeln(info);
+        }
+	</script>
+</body>
+</html>

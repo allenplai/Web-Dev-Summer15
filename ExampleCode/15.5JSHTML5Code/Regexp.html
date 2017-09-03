@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Example</title>
+    </head>
+
+    <body>
+    	<script>
+            main();
+        
+            function main() {
+                var pattern = /terps/i; /* try i and ig */
+                var strValue = prompt("Enter a string", "UMCP has terps and will always have terps");
+                var answer = strValue.match(pattern);
+                document.writeln("Answer to match: " + answer);
+                
+                if (pattern.test(strValue)) {
+                    alert("terps found in string");
+                } else {
+                    alert("terps not found");
+                }
+            }
+    	</script>
+    </body>
+</html>

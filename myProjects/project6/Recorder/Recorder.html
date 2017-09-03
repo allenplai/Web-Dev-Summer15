@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mouse Drawing Recording</title>
+    </head>
+
+    <body>
+        <canvas id="canvas" width="400" height="300"></canvas>
+        <form>
+          <input type="button" id="startRecording" value="Start Recording" />
+          <input type="button" id="stopRecording" value="Stop Recording" />
+          <input type="button" id="play" value="Play" />
+          <input type="button" id="clearScreen" value="Clear Screen" />
+        </form>
+        <p>
+          <strong>Move the mouse in the area below. Press enter to change to erase mode.
+             Press enter again to change back to drawing mode.</strong>
+        </p>
+        <strong>Help Section: </strong>
+        <p>
+          Clicking on "Start Recording" will clear the canvas an record all the movement of the mouse will draw.
+        </p>
+        <p>
+          Clicking on "Stop Recording" will stop recording the drawing movements. After 1.5 seconds, it will clear the canvas.
+        </p>
+        <p>
+          Clicking on "Play" will playback the drawing of what was recorded.
+        </p>
+        <p>
+          Clicking on "Clear Screen" will clear the canvas.
+        </p>
+
+        <script type="text/javascript">
+          "use strict";
+
+          var color = "red";
+          var sideLength=5;
+
+          var recordOfXPositions = new Array();
+          var recordOfYPositions = new Array();
+
+          var recordOfXPositionsDone = new Array();
+          var recordOfYPositionsDone = new Array();
+        	main();
+
+        	function main() {
+            document.onmousemove = processMousePosition;
+            document.onkeypress = changeColor;
+
+            // buttons
+            document.getElementById("startRecording").onclick = startRecording;
+            document.getElementById("stopRecording").onclick = stopRecording;
+            document.getElementById("play").onclick = play;
+            document.getElementById("clearScreen").onclick = clearScreen;
+        	}
+
+        	function processMousePosition(evt) {
+            draw(evt.pageX, evt.pageY);
+            storeMousePosition(evt.pageX, evt.pageY);
+          }
+
+          function changeColor() {
+            	if (color === "red") {
+            		color = "white";
+            		sideLength = 500;
+            	} else {
+            		color = "red";
+            		sideLength = 5;
+            	}
+          }
+
+      		function draw(xPos, yPos) {
+      			var context = document.getElementById("canvas").getContext("2d");
+      			context.fillStyle = color;
+      			context.fillRect(xPos, yPos, sideLength, sideLength);
+      		}
+
+
+          // recorder functions
+          function storeMousePosition(posX, posY) {
+            recordOfXPositions.push(posX);
+            recordOfYPositions.push(posY);
+          }
+
+          function startRecording() {
+            clearScreen();
+            recordOfXPositions = [];
+            recordOfYPositions = [];
+          }
+
+          function stopRecording() {
+            recordOfXPositionsDone = recordOfXPositions.slice();
+            recordOfYPositionsDone = recordOfYPositions.slice();
+            window.setTimeout(clearScreen, 1500);
+          }
+
+          function play() {
+            console.log(recordOfXPositions);
+            clearScreen();
+            for (var i = 0; i < recordOfXPositionsDone.length; i++) {
+              setTimeout(draw(recordOfXPositionsDone[i],recordOfYPositionsDone[i]), 1000);
+            }
+          }
+
+          function clearScreen() {
+            var context = document.getElementById("canvas").getContext("2d");
+            context.fillStyle = "white";
+            context.fillRect(0, 0, 99999, 99999);
+          }
+
+          function doNothing() {
+            var foo = "foo";
+            console.log("nothing");
+          }
+
+        </script>
+    </body>
+</html>

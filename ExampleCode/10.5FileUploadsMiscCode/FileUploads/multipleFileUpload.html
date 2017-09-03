@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <title>File Upload</title>	
+   </head>
+
+   <body>
+      <form action="multipleFileUpload.php" enctype="multipart/form-data" method="post">
+      <p>
+   	     <b>Enter image to upload: </b>
+   	     <input type="file" name="image" /><br />
+      </p>
+ 
+      <p>
+   	     <b>Enter text file to upload: </b>
+   	     <input type="file" name="text" /><br />
+      </p>
+ 
+      <p>
+   	     <b>Enter pdf file to upload: </b>
+   	     <input type="file" name="pdf" /><br />
+      </p>
+      
+      <p>
+   	     <input type="submit" value="uploadFiles" />
+      </p>
+      </form>
+   </body>
+</html>
